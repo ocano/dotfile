@@ -32,7 +32,9 @@ Plug 'MunifTanjim/nui.nvim'
 Plug 'folke/flash.nvim'
 Plug 'sirver/UltiSnips'
 Plug 'honza/vim-snippets'
+Plug 'windwp/nvim-autopairs'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+Plug 'numToStr/Comment.nvim'
 
 
 " Python関連のプラグイン
@@ -54,6 +56,10 @@ Plug 'nvim-neotest/nvim-nio'
 call plug#end()
 
 set runtimepath+=~/.config/nvim/custom_help
+
+set foldmethod=marker
+set foldmarker={{{,}}}
+
 
 " プラグインの設定をここに追加
 " vista.vim
@@ -95,7 +101,6 @@ let g:ale_c_clangformat_options = '"-style={
 \ BasedOnStyle: google,
 \ IndentWidth: 4,
 \ ColumnLimit: 100,
-\ AllowShortBlocksOnASingleLine: Always,
 \ AllowShortFunctionsOnASingleLine: Inline,
 \ FixNamespaceComments: true,
 \ ReflowComments: false,
@@ -369,6 +374,8 @@ require('textcase').setup {}
 require('flash').setup({
 })
 
+require('nvim-autopairs').setup{}
+require('Comment').setup()
 EOF
 
 
